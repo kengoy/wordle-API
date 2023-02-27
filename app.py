@@ -29,6 +29,7 @@ limiter = Limiter(
 
 def api_response(json_data):
     resp = make_response(json.dumps(json_data))
+    resp.headers.add('Access-Control-Allow-Origin', '*')
     resp.content_type = "application/json; charset=utf-8"
     return resp
 
